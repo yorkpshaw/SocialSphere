@@ -21,3 +21,9 @@ npm init -y sets up JSON package
 Add "type": "module", in package.json, indicates the project is using ECMAScript modules
 This makes so you use import instead of require()
 ```
+```
+Multi-line comments: shift+option+A
+```
+```
+Create .env file inside server to connect to Mongo database
+```
