@@ -26,4 +26,6 @@ Multi-line comments: shift+option+A
 ```
 ```
 Create .env file inside server to connect to Mongo database
+git rm --cached .env
+Must create gitignore first before committing .env
 ```
