@@ -7,10 +7,9 @@ import multer from "multer";
 import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
-
 // Allows you to properly set the paths when you configure directories later on
 import { fileURLToPath } from "url";
-
+import { register } from "./controllers/auth.js";
 
 /* CONFIGURATIONS */
 /* Grab the file URL */
@@ -43,6 +42,11 @@ const storage = multer.diskStorage({
 /* Anytime you upload a file, this variable is used */
 const upload = multer({ storage });
 
+/* Routes with files
+upload.single is the middleware that runs before registering, uploading locally to public/assets
+register is known as a 'controller'
+*/
+app.post("/auth/register", upload.single("picture"), register);
 
 /*
 MONGOOSE SETUP
