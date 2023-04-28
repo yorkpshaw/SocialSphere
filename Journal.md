@@ -10,4 +10,5 @@
 ## Data Model Tables
 
 # 4/26/23
-##
+## User model and registration/authentication controllers created
+## 41:00
