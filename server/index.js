@@ -11,6 +11,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import { register } from "./controllers/auth.js";
+import { verifyToken } from "./middleware/auth.js";
 
 /* CONFIGURATIONS */
 /* Grab the file URL */
@@ -47,7 +48,7 @@ const upload = multer({ storage });
 upload.single is the middleware that runs before registering, uploading locally to public/assets
 register is known as a 'controller'
 */
-app.post("/auth/register", upload.single("picture"), register);
+app.post("/auth/register", upload.single("picture"), verifyToken, register);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
@@ -57,7 +58,7 @@ MONGOOSE SETUP
 6001 is the backup port
 */
 const PORT = process.env.PORT || 6001;
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
