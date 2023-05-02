@@ -11,8 +11,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
-import postRoutes from "./routes/post.js";
+import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
+import { createPost } from "./controllers/posts.js"
 import { verifyToken } from "./middleware/auth.js";
 
 /* CONFIGURATIONS */
@@ -50,7 +51,8 @@ const upload = multer({ storage });
 upload.single is the middleware that runs before registering, uploading locally to public/assets
 register is known as a 'controller'
 */
-app.post("/auth/register", upload.single("picture"), verifyToken, register);
+app.post("/auth/register", upload.single("picture"), register);
+app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
