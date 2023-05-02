@@ -10,6 +10,8 @@ import path from "path";
 // Allows you to properly set the paths when you configure directories later on
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
+import postRoutes from "./routes/post.js";
 import { register } from "./controllers/auth.js";
 import { verifyToken } from "./middleware/auth.js";
 
@@ -52,13 +54,15 @@ app.post("/auth/register", upload.single("picture"), verifyToken, register);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
+app.use("/posts", postRoutes);
 
 /*
 MONGOOSE SETUP
 6001 is the backup port
 */
 const PORT = process.env.PORT || 6001;
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
