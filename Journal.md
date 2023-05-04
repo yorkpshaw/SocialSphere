@@ -12,3 +12,9 @@
 # 4/26/23
 ## User model and registration/authentication controllers created
 ## 41:00
+
+# 5/1/23
+## User authentication/authorization/login
+
+# 5/2/23
+## User Routes/Models, Post Routes/Models,
