@@ -4,7 +4,7 @@ const initialState = {
     mode: "light",
     user: null,
     token: null,
-    posts: [].
+    posts: [],
 };
 
 export const authSlice = createSlice({
@@ -36,7 +36,7 @@ export const authSlice = createSlice({
             const updatedPosts = state.posts.map((post) => {
                 if (post._id === action.payload.post_id) return action.payload.post;
                 return post;
-            })
+            });
         }
     }
 });
