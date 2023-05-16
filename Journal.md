@@ -18,3 +18,7 @@
 
 # 5/2/23
 ## User Routes/Models, Post Routes/Models,
+
+# 5/16/23
+## Finished the remaining code
+## Need to add redirecting to main page after login
