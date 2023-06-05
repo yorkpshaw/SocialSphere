@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: true,
             max: 50,
-            unique: true // No duplicate emails
+            unique: true
         },
         password: {
             type: String,
@@ -37,7 +37,7 @@ const UserSchema = new mongoose.Schema(
         occupation: String,
         viewedProfile: Number,
         impressions: Number,
-    }, { timestamps: true }); // Gives automatic dates for when it is created/updated
+    }, { timestamps: true });
 
     const User = mongoose.model("User", UserSchema);
 
