@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the client application files to the container
 COPY . .
 
+# Build the client application
+RUN npm run build
+
 # Expose the port on which the client application listens
 EXPOSE 3000
 
