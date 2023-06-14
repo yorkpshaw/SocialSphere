@@ -1,21 +1,11 @@
 version: '3.8'
 services:
-  client:
+  app:
     build:
       context: .
-      dockerfile: client/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./client:/app
-    command: npm start
-
-  server:
-    build:
-      context: .
-      dockerfile: server/Dockerfile
-    ports:
-      - "3001:3001"
-    volumes:
-      - ./server:/app
-    command: nodemon index.js
+      - ./client:/app/client
+      - ./server:/app/server
