@@ -3,6 +3,7 @@ services:
   client:
     build:
       context: ./client
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
@@ -11,6 +12,7 @@ services:
   server:
     build:
       context: ./server
+      dockerfile: Dockerfile
     ports:
       - "3001:3001"
     volumes:
