@@ -13,9 +13,6 @@ RUN npm install
 # Install nodemon globally
 RUN npm install -g nodemon
 
-# Install bcrypt with specific flags
-RUN npm install bcrypt --build-from-source --unsafe-perm
-
 # Copy the rest of the server application files to the container
 COPY . .
 

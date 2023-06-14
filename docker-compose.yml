@@ -3,16 +3,16 @@ services:
   client:
     build:
       context: ./client
-      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
       - ./client:/app
+    command: npm start
   server:
     build:
       context: ./server
-      dockerfile: Dockerfile
     ports:
       - "3001:3001"
     volumes:
       - ./server:/app
+    command: nodemon index.js
