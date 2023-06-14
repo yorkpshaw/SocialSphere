@@ -4,7 +4,7 @@ WORKDIR /app
 COPY client/package*.json ./
 RUN npm install
 COPY client/ ./
-RUN npm run build
+RUN npm run start
 
 # Build stage for server
 FROM node:14 as server-build
