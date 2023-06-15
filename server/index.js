@@ -57,7 +57,7 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 // Serve the client-side application for all routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client', 'App.js'));
 });
 
 const PORT = process.env.PORT || 6001;
