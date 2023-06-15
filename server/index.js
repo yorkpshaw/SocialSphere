@@ -52,13 +52,19 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
-// Serve the client-side application
-app.use(express.static(path.join(__dirname, 'client')));
+// Serve the static files from the client build directory
+app.use(express.static(path.join(__dirname, "../client/build")));
 
-// Serve the client-side application for all routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'App.js'));
+// Serve the App.js file
+app.get("/App.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/App.js"));
 });
+
+// Serve the client-side application for all other routes
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
+
 
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {
