@@ -57,7 +57,7 @@ app.use(express.static(path.join(__dirname, "../client/build")));
 
 // Serve the client-side application for the root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build/scenes/loginPage/index.jsx'));
+    res.sendFile(path.join(__dirname, 'client/src/scenes/loginPage/index.jsx'));
   });
 
 
