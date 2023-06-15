@@ -19,7 +19,6 @@ WORKDIR /app
 COPY --from=client-build /app/client/build ./client/build
 COPY --from=server-build /app/server .
 RUN npm install
-CMD concurrently "npm start --prefix client" "nodemon index.js"
 
 # Production stage
 FROM node:14 as production
