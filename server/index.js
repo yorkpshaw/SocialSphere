@@ -55,15 +55,10 @@ app.use("/posts", postRoutes);
 // Serve the static files from the client build directory
 app.use(express.static(path.join(__dirname, "../client/build")));
 
-// Serve the App.js file
-app.get("/App.js", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/App.js"));
-});
-
-// Serve the client-side application for all other routes
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/build/index.html"));
-//   });
+// Serve the client-side application for the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/src/App.js"));
+  });
 
 
 const PORT = process.env.PORT || 6001;
