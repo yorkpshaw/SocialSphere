@@ -52,14 +52,6 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
-// Serve the static files from the client build directory
-app.use(express.static(path.join(__dirname, "../client/build")));
-
-// Serve the client-side application for the root route
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/src/scenes/loginPage/index.jsx'));
-  });
-
 
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {
