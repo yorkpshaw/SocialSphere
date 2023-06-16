@@ -2,8 +2,8 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: .
-      dockerfile: client/Dockerfile
+      context: ./client
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
 
