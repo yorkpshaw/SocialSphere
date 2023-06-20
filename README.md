@@ -25,7 +25,13 @@ SocialSphere is a Twitter-like web application built with the MERN stack (MongoD
 
 ## Project Initialization
 
-- On Hold (6/12/23)
+To fully enjoy this application on your local machine, please make sure to follow these steps:
+
+1. Clone the repository: `git clone https://github.com/yorkpshaw/SocialSphere`
+2. CD into the new project directory
+3. Run `docker compose build`
+4. Run `docker compose up`
+5. Visit `http://localhost:3000/`
 
 ## Usage
 
